@@ -1,1 +1,1 @@
-# art109_project3
+# three-js-pic-tex
