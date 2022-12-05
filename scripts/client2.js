@@ -27,7 +27,7 @@ const camera = new THREE.PerspectiveCamera(
 const renderer = new THREE.WebGLRenderer();
 renderer.setClearColor(0xdfdfdf);
 renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(window.innerWidth*0.9, window.innerHeight*0.9);
+renderer.setSize(window.innerWidth*1, window.innerHeight*0.9);
 //renderer.setSize(400, 800);
 
 // Add scene to gltf.html
@@ -42,8 +42,135 @@ var mesh;
 // Load GLTF model, add material, and add it to the scene
 const loader = new GLTFLoader().load(
   "../../assets/cabin.glb",
+   // comment this line out and un comment the line below to swithc models
+   //"./assets/gourd_web.glb", //<-- photogrammetery model
+   function(gltf) {
+     // Scan loaded model for mesh and apply defined material if mesh is present
+     gltf.scene.traverse(function(child) {
+       if (child.isMesh) {
+         //child.material = newMaterial;
+       }
+     });
+     // set position and scale
+     mesh = gltf.scene;
+     mesh.position.set(0, 0, 0);
+     mesh.rotation.set(0.35, 0.25, 0);
+     mesh.scale.set(0.5, 0.5, 0.5); // <-- change this to (1, 1, 1) for photogrammetery model
+     // Add model to scene
+     scene.add(mesh);
+   },
+   undefined,
+   function(error) {
+     console.error(error);
+   }
+ );
+
+ const loader2 = new GLTFLoader().load(
+   "../../assets/plane.glb",
+   // comment this line out and un comment the line below to swithc models
+   //"./assets/gourd_web.glb", //<-- photogrammetery model
+   function(gltf) {
+     // Scan loaded model for mesh and apply defined material if mesh is present
+     gltf.scene.traverse(function(child) {
+       if (child.isMesh) {
+         //child.material = newMaterial;
+       }
+     });
+     // set position and scale
+     mesh = gltf.scene;
+     mesh.position.set(0, 0, 0);
+     mesh.rotation.set(0.35, 0.25, 0);
+     mesh.scale.set(0.5, 0.5, 0.5); // <-- change this to (1, 1, 1) for photogrammetery model
+     // Add model to scene
+     scene.add(mesh);
+   },
+   undefined,
+   function(error) {
+     console.error(error);
+   }
+ );
+
+ const loader3 = new GLTFLoader().load(
+   "../../assets/snowman.glb",
+   // comment this line out and un comment the line below to swithc models
+   //"./assets/gourd_web.glb", //<-- photogrammetery model
+   function(gltf) {
+     // Scan loaded model for mesh and apply defined material if mesh is present
+     gltf.scene.traverse(function(child) {
+       if (child.isMesh) {
+         //child.material = newMaterial;
+       }
+     });
+     // set position and scale
+     mesh = gltf.scene;
+     mesh.position.set(0, 0, 0);
+     mesh.rotation.set(0.35, 0.25, 0);
+     mesh.scale.set(0.5, 0.5, 0.5); // <-- change this to (1, 1, 1) for photogrammetery model
+     // Add model to scene
+     scene.add(mesh);
+   },
+   undefined,
+   function(error) {
+     console.error(error);
+   }
+ );
+
+ const loader4 = new GLTFLoader().load(
+   "../../assets/tree.glb",
+   // comment this line out and un comment the line below to swithc models
+   //"./assets/gourd_web.glb", //<-- photogrammetery model
+   function(gltf) {
+     // Scan loaded model for mesh and apply defined material if mesh is present
+     gltf.scene.traverse(function(child) {
+       if (child.isMesh) {
+         //child.material = newMaterial;
+       }
+     });
+     // set position and scale
+     mesh = gltf.scene;
+     mesh.position.set(0, 0, 0);
+     mesh.rotation.set(0.35, 0.25, 0);
+     mesh.scale.set(0.5, 0.5, 0.5); // <-- change this to (1, 1, 1) for photogrammetery model
+     // Add model to scene
+     scene.add(mesh);
+   },
+   undefined,
+   function(error) {
+     console.error(error);
+   }
+ );
+
+ const loader5 = new GLTFLoader().load(
+   "../../assets/tree2.glb",
+   // comment this line out and un comment the line below to swithc models
+  //"./assets/gourd_web.glb", //<-- photogrammetery model
+
+  function(gltf) {
+    // Scan loaded model for mesh and apply defined material if mesh is present
+    gltf.scene.traverse(function(child) {
+      if (child.isMesh) {
+        //child.material = newMaterial;
+      }
+    });
+    // set position and scale
+    mesh = gltf.scene;
+    mesh.position.set(1, 1, -3);
+    mesh.rotation.set(0.35, 0.25, 0);
+    mesh.scale.set(0.5, 0.5, 0.5); // <-- change this to (1, 1, 1) for photogrammetery model
+    // Add model to scene
+    scene.add(mesh);
+  },
+  undefined,
+  function(error) {
+    console.error(error);
+  }
+);
+
+const loader6 = new GLTFLoader().load(
+  "../../assets/snowballs.glb",
   // comment this line out and un comment the line below to swithc models
   //"./assets/gourd_web.glb", //<-- photogrammetery model
+  
   function(gltf) {
     // Scan loaded model for mesh and apply defined material if mesh is present
     gltf.scene.traverse(function(child) {
@@ -54,8 +181,8 @@ const loader = new GLTFLoader().load(
     // set position and scale
     mesh = gltf.scene;
     mesh.position.set(0, 0, 0);
-    mesh.rotation.set(0.2, 0, 0);
-    mesh.scale.set(0.35, 0.35, 0.35); // <-- change this to (1, 1, 1) for photogrammetery model
+    mesh.rotation.set(0.35, 0.25, 0);
+    mesh.scale.set(0.5, 0.5, 0.5); // <-- change this to (1, 1, 1) for photogrammetery model
     // Add model to scene
     scene.add(mesh);
   },
@@ -67,7 +194,7 @@ const loader = new GLTFLoader().load(
 
 // Add Orbit Controls
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.minDistance = 3;
+controls.minDistance = 2;
 controls.maxDistance = 6;
 controls.target.set(0, 0, -0.2);
 controls.update();
