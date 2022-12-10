@@ -66,7 +66,7 @@ const loader = new GLTFLoader().load(
  );
 
  const loader2 = new GLTFLoader().load(
-   "../../assets/plane.glb",
+   "../assets/plane.glb",
    // comment this line out and un comment the line below to swithc models
    //"./assets/gourd_web.glb", //<-- photogrammetery model
    function(gltf) {
@@ -91,7 +91,7 @@ const loader = new GLTFLoader().load(
  );
 
  const loader3 = new GLTFLoader().load(
-   "../../assets/snowman.glb",
+   "../assets/snowman.glb",
    // comment this line out and un comment the line below to swithc models
    //"./assets/gourd_web.glb", //<-- photogrammetery model
    function(gltf) {
@@ -116,7 +116,7 @@ const loader = new GLTFLoader().load(
  );
 
  const loader4 = new GLTFLoader().load(
-   "../../assets/tree.glb",
+   "../assets/tree.glb",
    // comment this line out and un comment the line below to swithc models
    //"./assets/gourd_web.glb", //<-- photogrammetery model
    function(gltf) {
@@ -141,7 +141,7 @@ const loader = new GLTFLoader().load(
  );
 
  const loader5 = new GLTFLoader().load(
-   "../../assets/tree2.glb",
+   "../assets/tree2.glb",
    // comment this line out and un comment the line below to swithc models
   //"./assets/gourd_web.glb", //<-- photogrammetery model
 
@@ -167,7 +167,7 @@ const loader = new GLTFLoader().load(
 );
 
 const loader6 = new GLTFLoader().load(
-  "../../assets/snowballs.glb",
+  "../assets/snowballs.glb",
   // comment this line out and un comment the line below to swithc models
   //"./assets/gourd_web.glb", //<-- photogrammetery model
 
